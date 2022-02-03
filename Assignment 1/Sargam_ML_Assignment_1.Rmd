@@ -1,0 +1,106 @@
+---
+title: "ML_Assignment_1_Sjain15"
+author: "Sargam Jain"
+date: "2/2/2022"
+output: pdf_document
+---
+
+#Read the Data
+
+```{r}
+student_marks <- read.csv(file = "~/Downloads/student_marks.csv")
+```
+
+```{r}
+library(fBasics)
+```
+
+## Descriptive analytics
+## Calculating summary stats for all the columns of data set
+
+```{r}
+summary(student_marks)
+```
+
+## Calculating specific summary statistics
+
+##mean
+```{r}
+mean(student_marks$Maths)
+mean(student_marks$Chemistry, na.rm = TRUE)
+
+```
+
+##median
+```{r}
+median(student_marks$Physics)
+median(student_marks$Chemistry, na.rm = TRUE)
+
+```
+
+##standard deviation
+```{r}
+sd(student_marks$Maths)
+```
+
+
+##max value in specific column of dataset
+
+```{r}
+max(student_marks$Economics)
+```
+
+##min value in specific column of dataset
+
+```{r}
+min(student_marks$Biology)
+```
+
+##Range
+
+```{r}
+range(student_marks$History)
+```
+
+
+##mode
+```{r}
+mode(student_marks$Maths)
+```
+
+
+##Transforming a variable
+
+#Example 1
+```{r}
+transform(student_marks, Maths = Maths + 5)
+```
+
+
+#Example 2
+```{r}
+transform(student_marks, Accountancy = c(89, 88, 45, 37, 76))
+```
+
+
+#Plot
+```{r}
+plot(student_marks$Maths)
+```
+
+## Plot Histogram
+```{r}
+hist(student_marks$English)
+```
+
+
+##Scatter Plot
+```{r}
+plot(student_marks$Physics, student_marks$Civics)
+```
+
+
+
+
+
+
